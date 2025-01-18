@@ -1,11 +1,11 @@
 import React from "react";
-import { NavBarItems } from "../../constant/MenuItem";
+import { NavBarItems } from "../../../../constant/MenuItem";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <div className="flex pt-6 pb-6 pl-20 pr-20 justify-between">
-      <div className="flex justify-center items-center bg-black">
+      <div className="flex justify-center items-center">
         <img
           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBlLLxIkE9p5IniBVIupwaILQg4Ozd90Z6KA&s"
           alt="WEBY"
@@ -21,7 +21,7 @@ const Navbar = () => {
           </Link>
         ))}
       </div>
-      <div className="flex justify-center items-center h-20 w-40 border-2 rounded-lg">
+      <div className="flex justify-center items-center h-16 w-40 border-2 text-white rounded-lg">
         <button>Contact Button</button>
       </div>
     </div>

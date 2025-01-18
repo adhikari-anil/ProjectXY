@@ -7,7 +7,7 @@ const Background = () => {
 
   // Memoize initial points creation
   const createInitialPoints = useCallback(() => {
-    return Array.from({ length: 60 }, (_, i) => ({
+    return Array.from({ length: 45 }, (_, i) => ({
       id: i,
       x: Math.random() * 100,
       y: Math.random() * 100,
@@ -162,7 +162,7 @@ const Background = () => {
   ));
 
   return (
-    <div className="fixed inset-0 w-full h-full bg-gradient-to-br from-purple-900 to-blue-500">
+    <div className="fixed inset-0 w-full h-full">
       <div className="w-full h-full" onMouseMove={handleMouseMove}>
         <svg
           className="w-full h-full absolute inset-0"
