@@ -1,27 +1,10 @@
-// import React from 'react'
-
-// const Home = () => {
-//   return (
-//     <div className='h-full w-full flex justify-center items-center'>
-//         <div className='flex flex-col gap-6'>
-//             <h1 className='font-serif text-3xl text-white flex flex-col gap-1'>We Make Creative And
-//                 <span className='font-sans text-2xl text-red-400'>Sales Generating Website</span>
-//             </h1>
-//             <p className='font-thin text-lg text-white'>Discover the key improvements your site needs to drive more sales. Take the first step toward better results today!</p>
-//             <button className='w-56 border-2 rounded-sm h-20 text-white'>Consult with Sales Expert</button>
-//         </div>
-//     </div>
-//   )
-// }
-
-// export default Home
 import React from "react";
 
 const Home = () => {
   return (
     <div className="min-h-[calc(100vh-150px)] w-full flex justify-center items-center px-4 sm:px-6 lg:px-8">
       <div className="max-w-2xl flex flex-col justify-center items-center gap-8 animate-fadeIn">
-        <div className="space-y-4">
+        <div className="mt-20">
           <h1 className="font-serif text-6xl text-center sm:text-5xl lg:text-6xl text-white leading-tight">
             We Make Creative And
             <span className="block font-sans text-3xl sm:text-4xl lg:text-5xl text-red-400 mt-2">

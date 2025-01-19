@@ -1,7 +1,9 @@
+import Footer from "./component/LowerContent/Footer";
 import Home from "./component/MainContenet/Pages/Home/Home";
 import Background from "./component/MainContenet/Pages/Navbar/BackgroundSection";
 import Navbar from "./component/MainContenet/Pages/Navbar/Navbar";
 import SlidingBackground from "./component/MainContenet/Pages/Navbar/SlidingBackground";
+import Service from "./component/MainContenet/Pages/Service/Service";
 
 function App() {
   return (
@@ -17,6 +19,9 @@ function App() {
         <main>
           <Home />
         </main>
+        <footer>
+          <Footer />
+        </footer>
       </div>
     </>
   );

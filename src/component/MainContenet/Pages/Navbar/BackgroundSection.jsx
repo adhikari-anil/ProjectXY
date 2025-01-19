@@ -9,8 +9,8 @@ const Background = () => {
   const createInitialPoints = useCallback(() => {
     return Array.from({ length: 45 }, (_, i) => ({
       id: i,
-      x: Math.random() * 100,
-      y: Math.random() * 100,
+      x: Math.random() * 200,
+      y: Math.random() * 200,
       vx: (Math.random() - 0.5) * 0.1,
       vy: (Math.random() - 0.5) * 0.1,
       baseX: Math.random() * 100,
