@@ -1,9 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { IoVolumeHighOutline } from "react-icons/io5";
-import { FaSquareInstagram } from "react-icons/fa6";
-import { SiFacebook } from "react-icons/si";
-import { FaLinkedin } from "react-icons/fa6";
 
 const items = [
   {
@@ -24,14 +20,44 @@ const items = [
 ];
 
 const Footer = () => {
+  const [clicked, setClick] = useState(false);
+  const [audio] = useState(new Audio("/public/background.mp3"));
+
+  const handleClick = () => {
+    setClick(!clicked);
+  };
+
+  useEffect(() => {
+    if (!clicked) {
+      audio.play();
+    } else {
+      audio.pause();
+      audio.currentTime = 0;
+    }
+  }, [clicked, audio]);
+
   return (
     <div className="text-white p-16 h-16 fixed bottom-5 left-0 right-0 z-30">
       <div className="flex justify-between items-center h-10">
         <div className="flex gap-6 font-sans text-lg">
           <h3> © 2024 All Rights Reserved </h3>
           <div className="flex gap-3 justify-center items-center">
-            Sound:{" "}
-            <img src="/public/volume.svg" alt="volume" className="h-5 w-5" />
+            Sound:
+            {clicked === true ? (
+              <img
+                src="/public/volume1.svg"
+                alt="volume"
+                className="h-5 w-5 hover: cursor-pointer"
+                onClick={handleClick}
+              />
+            ) : (
+              <img
+                src="/public/volume.svg"
+                alt="volume"
+                className="h-5 w-5 hover: cursor-pointer"
+                onClick={handleClick}
+              />
+            )}
           </div>
         </div>
         <div className="flex gap-1">
