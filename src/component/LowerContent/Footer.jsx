@@ -3,25 +3,25 @@ import { Link } from "react-router-dom";
 
 const items = [
   {
-    src: "/public/instagram.svg",
+    src: "/instagram.svg",
     to: "https://www.instagram.com/anneeladhikari/",
     name: "Facebook",
   },
   {
-    src: "/public/facebook.svg",
+    src: "/facebook.svg",
     to: "https://www.facebook.com/profile.php?id=100068405876847",
     name: "Instagram",
   },
   {
-    src: "/public/linkedin.svg",
+    src: "/linkedin.svg",
     to: "https://www.linkedin.com/in/anil-adhikari-833973298/",
     name: "Linkedin",
   },
 ];
 
 const Footer = () => {
-  const [clicked, setClick] = useState(false);
-  const [audio] = useState(new Audio("/public/background.mp3"));
+  const [clicked, setClick] = useState(true);
+  const [audio] = useState(new Audio("/background.mp3"));
 
   const handleClick = () => {
     setClick(!clicked);
@@ -30,6 +30,7 @@ const Footer = () => {
   useEffect(() => {
     if (!clicked) {
       audio.play();
+      audio.loop = true;
     } else {
       audio.pause();
       audio.currentTime = 0;
@@ -45,14 +46,14 @@ const Footer = () => {
             Sound:
             {clicked === true ? (
               <img
-                src="/public/volume1.svg"
+                src="/volume1.svg"
                 alt="volume"
                 className="h-5 w-5 hover: cursor-pointer"
                 onClick={handleClick}
               />
             ) : (
               <img
-                src="/public/volume.svg"
+                src="/volume.svg"
                 alt="volume"
                 className="h-5 w-5 hover: cursor-pointer"
                 onClick={handleClick}
