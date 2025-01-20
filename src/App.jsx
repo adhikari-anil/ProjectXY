@@ -9,19 +9,25 @@ function App() {
   return (
     <>
       <div className="relative min-h-screen">
-        <SlidingBackground />
-        <div className="w-full h-full">
+        <div className="fixed inset-0">
+          <SlidingBackground />
+        </div>
+        <div className="fixed inset-0">
           <Background />
         </div>
         <div className="relative z-10">
-          <Navbar />
+          <div className="flex flex-col min-h-screen">
+            <nav className="w-full">
+              <Navbar />
+            </nav>
+            <main className="flex-1">
+              <Home />
+            </main>
+            <footer className="w-full">
+              <Footer />
+            </footer>
+          </div>
         </div>
-        <main>
-          <Home />
-        </main>
-        <footer>
-          <Footer />
-        </footer>
       </div>
     </>
   );
