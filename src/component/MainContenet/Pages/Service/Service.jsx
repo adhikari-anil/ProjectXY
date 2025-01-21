@@ -1,50 +1,56 @@
 import React from "react";
 
+const items = [
+  {
+    id: 1,
+    photo: "/creative.png",
+    title: "Creative Website",
+  },
+  {
+    id: 2,
+    photo: "/visitor.png",
+    title: "Convert Visitor",
+  },
+  {
+    id: 3,
+    photo: "/capital.png",
+    title: "Increase Revenue",
+  },
+];
+
 const Service = () => {
   return (
-    <div className="min-h-screen w-full flex justify-center items-center px-4 sm:px-6 lg:px-8 pt-20">
-      <div className="max-w-2xl flex flex-col gap-8 animate-fadeIn">
-        <div className="space-y-4">
-          <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl text-white leading-tight">
-            Our Services
-            <span className="block font-sans text-3xl sm:text-4xl lg:text-5xl text-red-400 mt-2">
-              What We Offer
-            </span>
+    <div className="flex justify-center items-center px-4 sm:px-6">
+      <div className="flex flex-col justify-center items-center gap-8 animate-fadeIn">
+        <div className="flex flex-col gap-5">
+          <h1 className="font-serif text-6xl text-center sm:text-5xl lg:text-6xl text-white leading-tight">
+            Turn Visitors into Paying Customers
           </h1>
-
-          <p className="font-light text-lg sm:text-xl text-white/90 max-w-xl">
-            We provide comprehensive web solutions tailored to your business
-            needs. From design to deployment, we've got you covered.
+          <p className="font-light w-full text-lg sm:text-xl text-white/90 text-center">
+            Often, boring web design, monotonous content & bad story telling is the
+            <span> culprit for a low conversion rate. </span>
           </p>
         </div>
-
-        {/* Service Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
-          {[
-            {
-              title: "Web Design",
-              description: "Creative and responsive designs",
-            },
-            { title: "Development", description: "Custom web applications" },
-            { title: "SEO", description: "Search engine optimization" },
-            {
-              title: "Maintenance",
-              description: "Regular updates and support",
-            },
-          ].map((service, index) => (
-            <div
-              key={index}
-              className="p-6 border border-white/20 rounded-lg backdrop-blur-sm
-                        hover:border-red-400/50 transition-all duration-300
-                        group"
-            >
-              <h3 className="text-xl text-white font-medium mb-2 group-hover:text-red-400">
-                {service.title}
-              </h3>
-              <p className="text-white/80">{service.description}</p>
+        <div className="flex flex-row gap-5 justify-center items-center">
+          {items.map((item, index) => (
+            <div className="flex flex-col gap-3 items-center text-center" key={index}>
+              <img src={item.photo} alt={item.title} className="h-16 w-16"/>
+              <p className="text-white">{item.title}</p>
             </div>
           ))}
         </div>
+        <button
+          className="group relative w-64 h-16 border-2 border-white/80 rounded-lg text-white
+          transition-all duration-300 hover:bg-white/10 hover:border-red-400 overflow-hidden"
+        >
+          <span className="relative z-10 font-medium text-lg">
+            Get a Free Website Audit
+          </span>
+          <div
+            className="absolute inset-0 bg-gradient-to-r from-red-400/20 to-purple-500/20
+            transform translate-x-full group-hover:translate-x-0 transition-transform duration-500"
+          ></div>
+        </button>
       </div>
     </div>
   );

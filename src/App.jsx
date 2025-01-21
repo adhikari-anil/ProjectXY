@@ -15,12 +15,17 @@ function App() {
         <div className="relative inset-0">
           <Background />
         </div>
-        <div className="flex flex-col gap-5 inset-0 z-10">
-          <nav className="w-full">
+        <div className="flex flex-col gap-5 z-10 w-full">
+          <header>
             <Navbar />
-          </nav>
-          <main className="w-full">
-            <Home />
+          </header>
+          <main className="flex-1 w-full flex flex-col overflow-y-auto snap-y snap-mandatory">
+            <section className="snap-start min-h-screen flex items-center justify-center">
+              <Home />
+            </section>
+            <section className="snap-start min-h-screen flex items-center justify-center">
+              <Service />
+            </section>
           </main>
           <footer className="w-full">
             <Footer />
