@@ -12,21 +12,19 @@ function App() {
         <div className="fixed inset-0">
           <SlidingBackground />
         </div>
-        <div className="fixed inset-0">
+        <div className="relative inset-0">
           <Background />
         </div>
-        <div className="relative z-10">
-          <div className="flex flex-col min-h-screen">
-            <nav className="w-full">
-              <Navbar />
-            </nav>
-            <main className="flex-1">
-              <Home />
-            </main>
-            <footer className="w-full">
-              <Footer />
-            </footer>
-          </div>
+        <div className="flex flex-col gap-5 inset-0 z-10">
+          <nav className="w-full">
+            <Navbar />
+          </nav>
+          <main className="w-full">
+            <Home />
+          </main>
+          <footer className="w-full">
+            <Footer />
+          </footer>
         </div>
       </div>
     </>

@@ -38,8 +38,8 @@ const Footer = () => {
   }, [clicked, audio]);
 
   return (
-    <div className="text-white p-16 h-16 fixed bottom-5 left-0 right-0 z-30 hidden lg:block">
-      <div className="flex justify-between items-center h-10">
+    <div className="text-white p-2 fixed bottom-5 left-0 right-0 z-30 hidden lg:block">
+      <div className="flex justify-between items-center h-10 p-10">
         <div className="flex gap-6 font-sans text-lg">
           <h3> © 2024 All Rights Reserved </h3>
           <div className="flex gap-3 justify-center items-center">
