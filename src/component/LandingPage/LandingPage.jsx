@@ -5,11 +5,13 @@ import TypeWriter from "../Common/TypeWriter";
 const LandingPage = () => {
   const [audio] = useState(new Audio("/intro-speech.mp3"));
   let navigate = useNavigate();
+  const [clickedSkip, setClickSkip] = useState(false);
 
   const handleClick = () => {
     navigate("/home");
     audio.pause();
     audio.currentTime = 0;
+    setClickSkip(!clickedSkip);
   };
   const text = "In the end of the 5th century before our time the first jewels were brought to Europe. Since then many have tried to recreate something similar in value and in beauty. Some have achieved however many have failed because of their lack of knowledge time or other resources. To this day jewels are thought to be one of the most precious gems on earth. Although we don't create jewels, we do imagine ourselves as jewelers. Just from a different angle.";
   return (
@@ -17,7 +19,7 @@ const LandingPage = () => {
       <div className="text-white flex justify-start">
         <img src="/LandingLogo.png" className="h-40 w-40"></img>
       </div>
-      <TypeWriter text={text} speed={69} audio={audio}/>
+      <TypeWriter text={text} speed={69} audio={audio} action={clickedSkip}/>
       <div className="flex gap-5 p-5 text-white justify-start">
         <button onClick={handleClick}> Skip our Story ! </button>
       </div>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const TypeWriter = ({ text, speed, audio }) => {
+const TypeWriter = ({ text, speed, audio, action }) => {
   const [displayedText, setDisplayText] = useState("");
   const [index, setIndex] = useState(0);
   let navigate = useNavigate();
@@ -17,13 +17,12 @@ const TypeWriter = ({ text, speed, audio }) => {
         }else{
           audio.pause();
           audio.currentTime = 0;
+          navigate("/home");
         }
       }, speed);
       return () => clearTimeout(timer);
     }
-    console.log("Reached Here.");
-    navigate("/home");
-  }, [index, text, speed]);
+  }, [index, text, speed, audio, action, navigate]);
 
   return (
     <div className="text-xl p-5 font-mono text-gray-80 text-white">
