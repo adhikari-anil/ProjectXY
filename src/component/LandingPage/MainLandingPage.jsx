@@ -18,7 +18,6 @@ const MainLandingPage = () => {
         <h2>Would you like to experience the website with sound?</h2>
       </div>
         <div className='flex gap-5 text-white justify-start'>
-
             <button onClick={()=>handleClick("yes")}>Yes Please!</button>
             <button onClick={()=>handleClick("no")}>No</button>
         </div>

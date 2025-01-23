@@ -1,23 +1,25 @@
-import React from 'react'
-import { useNavigate } from 'react-router-dom';
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import TypeWriter from "../Common/TypeWriter";
 
 const LandingPage = () => {
   let navigate = useNavigate();
 
-  const handleClick = ()=>{
+  const handleClick = () => {
     navigate("/home");
   };
+  const text = "In the end of the 5th century before our time the first jewels were brought to Europe. Since then many have tried to recreate something similar in value and in beauty. Some have achieved however many have failed because of their lack of knowledge time or other resources. To this day jewels are thought to be one of the most precious gems on earth. Although we don't create jewels, we do imagine ourselves as jewelers. Just from a different angle.";
   return (
-    <div className='h-screen w-screen flex flex-col justify-start gap-5 bg-black'>
-      <div className='text-white flex justify-start'>
-        <img src='/public/LandingLogo.png'></img>
+    <div className="h-screen w-screen p-10 flex flex-col justify-center items-start gap-4 bg-black">
+      <div className="text-white flex justify-start">
+        <img src="/LandingLogo.png" className="h-40 w-40"></img>
       </div>
-        <div className='flex gap-5 text-white justify-start'>
-            <button onClick={handleClick}>Yes</button>
-            <button>No</button>
-        </div>
+      <TypeWriter text={text} speed={150}/>
+      <div className="flex gap-5 p-5 text-white justify-start">
+        <button onClick={handleClick}> Skip our Story ! </button>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default LandingPage
+export default LandingPage;
